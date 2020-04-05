@@ -1,0 +1,523 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct:	<http://purl.org/dc/terms/> .
+@prefix wd: <http://www.wikidata.org/ontology/> .
+@base <http://CBSMicrodata.org/> .
+
+
+<TriplesMapTopics>
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  # Define the subject of the generated statements
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}" ; 
+    rr:class dcat:Dataset ];
+
+  # Map the country name to rdfs:label
+  rr:predicateObjectMap [ 
+    rr:predicate dct:identifier ;
+    rr:objectMap [ rml:reference "File_id" ; rr:datatype xsd:string ]
+  ] ;
+
+ rr:predicateObjectMap [ 
+    rr:predicate dct:issued ;
+    rr:objectMap [ rml:reference "Year" ; rr:datatype xsd:gYear ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:issued ;
+    rr:objectMap [ rml:reference "Month" ; rr:datatype xsd:gMonth ]
+  ] ;
+
+ rr:predicateObjectMap [ 
+    rr:predicate dct:issued ;
+    rr:objectMap [ rml:reference "Day" ; rr:datatype xsd:gDay ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:title ; 
+    rr:objectMap [ rml:reference "Title"; rr:language "nl" ]
+  ] ;	
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:title ; 
+    rr:objectMap [ rml:reference "Title_EN"; rr:language "en" ]
+  ] ;	
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/catalogus-microdata/{Category}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:description ;
+    rr:objectMap [ rml:reference "Download_page" ; rr:datatype xsd:anyURI]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:description ;
+    rr:objectMap [ rml:reference "Note_EN" ; rr:language "en" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:language ;
+    rr:objectMap [ rr:constant <http://id.loc.gov/vocabulary/iso639-1/nl> ; rr:datatype xsd:anyURI]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:landingPage ;
+    rr:objectMap [ rml:reference "Landing_page" ; rr:datatype xsd:anyURI]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_1}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_2}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_3}" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_4}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_5}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_6}" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_7}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_8}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_9}" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_10}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_11}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_12}" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_13}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_14}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_15}" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dcat:keyword ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_16}" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:publisher ;
+    rr:objectMap [ rr:constant wd:Q167086 ]
+  ] .
+
+<TriplesMapOrganization> 
+  a rr:TriplesMap;
+
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+
+  rr:subjectMap [ rr:constant <https://www.cbs.nl/> ;
+    rr:class dct:publisher ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate rdfs:label ;
+    rr:objectMap [ rr:constant wd:Q167086 ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate wd:P1448 ;
+    rr:objectMap [ rr:constant "Centraal Bureau voor de Statistiek"; rr:language "nl" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate wd:P1448  ;
+    rr:objectMap [ rr:constant "Statistics Netherlands"; rr:language "en" ]
+  ] ;
+  
+  rr:predicateObjectMap [ 
+    rr:predicate dct:created ;
+    rr:objectMap [ rr:template "https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/catalogus-microdata/{Category}"]
+  ] .
+
+
+<TriplesMapCategory> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "https://www.cbs.nl/nl-nl/onze-diensten/maatwerk-en-microdata/microdata-zelf-onderzoek-doen/catalogus-microdata/{Category}" ;
+    rr:class dcat:catalog ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:title ;
+    rr:objectMap [ rml:reference "Category" ; rr:language "nl" ]
+  ] ;
+  
+  rr:predicateObjectMap [ 
+    rr:predicate dct:description ;
+    rr:objectMap [ rml:reference "Category_EN" ; rr:language "en" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:dataset ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}" ]
+  ] .
+
+
+<TriplesMapVariables> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataVariables_combined_v2.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template  "http://CBSMicrodata.org/dataset/variable/{Variable_lable}" ;
+    rr:class dct:subject ] ;
+  
+  rr:predicateObjectMap [ 
+    rr:predicate dct:description ;
+    rr:objectMap [ rml:reference "Variable_def_EN" ; rr:language "en" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:description ;
+    rr:objectMap [ rml:reference "Variable_def" ; rr:language "nl" ]
+  ] ;
+
+    rr:predicateObjectMap [ 
+    rr:predicate dct:abstract ;
+    rr:objectMap [ rml:reference "Brief_def" ; rr:language "en" ]
+  ] ;
+
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}" ]
+  ] .
+
+
+<TriplesMapKeyword_1> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_1}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_2> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_2}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_3> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_3}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+<TriplesMapKeyword_4> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_4}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_5> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_5}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_6> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_6}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+<TriplesMapKeyword_7> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_7}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_8> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_8}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_9> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_9}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+<TriplesMapKeyword_10> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_10}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_11> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_11}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_12> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_12}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+<TriplesMapKeyword_13> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_13}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_14> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_14}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+
+<TriplesMapKeyword_15> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_15}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
+
+  
+  <TriplesMapKeyword_16> 
+  a rr:TriplesMap;
+
+  # Define the data source (file location)
+  rml:logicalSource [
+    rml:source "CBSMicrodataInfo_combined_v3.csv";
+    rml:referenceFormulation ql:CSV
+  ];
+  rr:subjectMap [ rr:template "http://CBSMicrodata.org/dataset/keywords/{Keyword_16}" ;
+    rr:class dcat:keyword ] ;
+    
+  rr:predicateObjectMap [ 
+    rr:predicate dct:isPartOf ;
+    rr:objectMap [ rr:template "http://CBSMicrodata.org/dataset/{File_id}"]
+  ] .
