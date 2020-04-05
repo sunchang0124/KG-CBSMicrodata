@@ -11,11 +11,12 @@ This repository is for the project from Knowledge Graph Course 2020. The goal of
 6. Convert CSV to RDF using R2RML
 7. Complete knowledge graph
 
-```
 ![Workflow Diagram](https://github.com/sunchang0124/KG-CBSMicrodata/raw/master/CBSMicrodata.png)
-```
 
 **R2RML mapping**
 
 Mapping file is in the mapping_cbs.ttl. 
 
+** Knowledge Graph in GraphDB **
+
+![Workflow Diagram](https://github.com/sunchang0124/KG-CBSMicrodata/raw/master/graphdb1.png)
