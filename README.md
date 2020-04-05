@@ -12,7 +12,7 @@ This repository is for the project from Knowledge Graph Course 2020. The goal of
 7. Complete knowledge graph
 
 ```
-![alt text](http://url/to/img.png)
+![Workflow Diagram](https://github.com/sunchang0124/KG-CBSMicrodata/raw/master/CBSMicrodata.png)
 ```
 
 **R2RML mapping**
