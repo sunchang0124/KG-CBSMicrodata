@@ -11,6 +11,10 @@ This repository is for the project from Knowledge Graph Course 2020. The goal of
 6. Convert CSV to RDF using R2RML
 7. Complete knowledge graph
 
+```
+![alt text](http://url/to/img.png)
+```
+
 **R2RML mapping**
 
 Mapping file is in the mapping_cbs.ttl. 
